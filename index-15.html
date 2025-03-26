@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Heaven Andaman">
+    <meta name="author" content="Ansonika">
+    <title>Heaven Andaman</title>
+
+    <!-- Favicons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/logo/5.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+<style>
+.customer-review-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('https://source.unsplash.com/1600x900/?travel') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+.customer-review-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.swiper {
+    width: 90%;
+    max-width: 900px; /* Increased width to match the review images */
+    margin: auto;
+}
+
+.review-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 850px; /* Ensures container does not exceed the review image width */
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.customer-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 3px solid #fff;
+}
+
+.customer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-content {
+    width: 100%; /* Ensures it stays within review-container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-review {
+    max-width: 100%; /* Ensures image does not exceed its parent */
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Fix for Swiper Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: black !important;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px !important;
+    color: black !important;
+}
+	/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+}
+
+/* Video Styles */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section */
+    z-index: -1; /* Places the video behind the content */
+}
+
+/* Hero Content */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 0 20px;
+    max-width: 90%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title Style */
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #fefefe, #fefefe);
+    background-clip: text;
+    color: transparent;
+    /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); */
+    margin-bottom: 20px;
+    /* animation: slideIn 1.5s ease-out; */
+}
+
+/* Paragraph Style */
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* Button Style */
+.hero-content .btn {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    background-color: #fe904b;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content .btn:hover {
+    background-color: #e65c4a;
+    transform: scale(1.05);
+}
+
+/* Make it responsive */
+
+/* For tablets (up to 768px wide) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .btn {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* For mobile devices (up to 480px wide) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-content .btn {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+/* For large screens (above 1200px) */
+@media (min-width: 1200px) {
+    .hero-content h1 {
+        font-size: 5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .hero-content .btn {
+        padding: 14px 50px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Animation for Title */
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%, -50%) translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+</style>
+
+<body class="datepicker_mobile_full"><!-- Remove this class to disable datepicker full on mobile -->
+		
+	<div id="page">
+		
+		<header class="header menu_fixed">
+			<!-- <div id="preloader"><div data-loader="circle-side"></div></div>/Page Preload -->
+			<div id="logo">
+				<a href="index.html">
+					<img src="img/logo/5(1).png" width="170" height="56" alt="" class="logo_normal">
+					<img src="img/logo/5.png" width="170" height="56" alt="" class="logo_sticky">
+				</a>
+			</div>
+			 <!-- <ul id="top_menu">
+				<li><a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
+				<li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+				<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
+			</ul>  -->
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu">
+				<ul>
+				<li><span><a href="index-15.html">Home</a></span></li>
+				<li><span><a href="about.html">About</a></span></li>
+				<li><span><a href="tours-grid-isotopepack.html">Package</a></span></li>
+				<li><span><a href="tours-grid-isotopedest.html">Destination</a></span></li>
+				
+					<!-- <li><span><a href="#0">Hotels</a></span>
+						<ul>
+							<li>
+								<span><a href="#0">Hotel Grid</a></span>
+								<ul>
+									<li><a href="hotels-grid-isotope.html">Hotel Grid Isotope</a></li>
+									<li><a href="hotels-grid-sidebar.html">Hotel Grid Sidebar</a></li>
+									<li><a href="hotels-grid-sidebar-2.html">Hotel Grid Sidebar 2</a></li>
+									<li><a href="hotels-grid.html">Hotel Grid Simple</a></li>
+								</ul>
+							</li>
+							<li>
+								<span><a href="#0">Hotel List</a></span>
+								<ul>
+									<li><a href="hotels-list-isotope.html">Hotel List Isotope</a></li>
+									<li><a href="hotels-list-sidebar.html">Hotel List Sidebar</a></li>
+									<li><a href="hotels-list-sidebar-2.html">Hotel List Sidebar 2</a></li>
+									<li><a href="hotels-list.html">Hotel List Simple</a></li>
+								</ul>
+							</li>
+							<li><a href="hotels-half-screen-map.html">Hotel Half Screen Map</a></li>
+							<li><a href="hotel-detail.html">Hotel Detail</a></li>
+						</ul>
+					</li>
+					<li><span><a href="#0">Eat &amp; Drink</a></span>
+						<ul>
+							<li>
+								<span><a href="#0">Restaurant Grid</a></span>
+								<ul>
+									<li><a href="restaurants-grid-isotope.html">Restaurant Grid Isotope</a></li>
+									<li><a href="restaurants-grid-sidebar.html">Restaurant Grid Sidebar</a></li>
+									<li><a href="restaurants-grid-sidebar-2.html">Restaurant Grid Sidebar 2</a></li>
+									<li><a href="restaurants-grid.html">Restaurant Grid simple</a></li>
+								</ul>
+							</li>
+							<li>
+								<span><a href="#0">Restaurant List</a></span>
+								<ul>
+									<li><a href="restaurants-list-isotope.html">Restaurant List Isotope</a></li>
+									<li><a href="restaurants-list-sidebar.html">Restaurant List Sidebar</a></li>
+									<li><a href="restaurants-list-sidebar-2.html">Restaurant List Sidebar 2</a></li>
+									<li><a href="restaurants-list.html">Restaurant List Simple</a></li>
+								</ul>
+							</li>
+							<li><a href="restaurants-half-screen-map.html">Half Screen Map</a></li>
+							<li><a href="restaurant-detail.html">Restaurant Detail</a></li>
+							<li><a href="restaurant-detail-2.html">Restaurant Time Picker</a></li>
+						</ul>
+					</li> -->
+					<li><span><a href="adventure.html">Activities</a></span></li>
+					<li><span><a href="blog.html">Blog</a></span></li>
+					<li><span><a href="media-gallery.html">Our Happy Customer</a></span></li>
+					<li><span><a href="#0">Service</a></span>
+						<ul>
+							<li><a href="hotels-list-isotopeferry.html">Ferry Service</a></li>
+							<li><a href="hotels-list-isotopecab.html">Cab Service</a></li>
+							<!-- <li><a href="help.html">Help Section</a></li> -->
+							<!-- <li><a href="faq.html">Faq Section</a></li>
+							<li><a href="wishlist.html">Wishlist page</a></li>
+							<li><a href="contacts.html">Contacts</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="register.html">Register</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="bootstrap-modal.html">Bootstrap Modal <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="modal-version-2.html">Another Modal <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="pricing-tables-2.html">Pricing Tables 1 <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="pricing-tables-3.html">Pricing Tables 2 <strong class="badge text-bg-danger">New!</strong></a></li> -->
+						</ul>
+					</li>
+				<li><span><a href="contacts.html">Contact</a></span></li>
+					
+					<!-- <li><span><a href="#0">Extra</a></span>
+						<ul>
+							<li><a href="menu-options.html">Menu Position Options</a></li>
+							<li><a href="tour-detail-singlemonth-datepicker.html">Single month Datepicker</a></li>
+							<li><a href="404.html">404 Error page</a></li>
+							<li><a href="cart-1.html">Cart page 1</a></li>
+							<li><a href="cart-2.html">Cart page 2</a></li>
+							<li><a href="cart-3.html">Cart page 3</a></li>
+							<li><a href="pricing-tables.html">Responsive pricing tables</a></li>
+							<li><a href="coming_soon/index.html">Coming soon</a></li>
+							<li><a href="invoice.html">Invoice</a></li>
+							<li><a href="icon-pack-1.html">Icon pack 1</a></li>
+							<li><a href="icon-pack-2.html">Icon pack 2</a></li>
+							<li><a href="icon-pack-3.html">Icon pack 3</a></li>
+							<li><a href="icon-pack-4.html">Icon pack 4</a></li>
+							<li><a href="hamburgers.html">Animated Hamburgers</a></li>
+						</ul>
+					</li> -->
+					<!-- <li><span><a href="#0">Buy template</a></span></li> -->
+				</ul>
+			</nav>
+		</header>
+	
+	<main>
+		<!-- Background Self hosted video bg fullscreen -->
+		<section class="hero-section">
+			<video autoplay muted loop playsinline class="hero-video">
+			  <source src="img/home2.mp4" type="video/mp4">
+			  <img src="img/home2.mp4" alt="Fallback Image"> <!-- Fallback image for browsers that don’t support video -->
+			</video>
+			<div class="hero-content">
+			  <h1>Heaven Andaman</h1>
+			  <p>Your journey starts here. Explore the world's hidden treasures.</p>
+			  <a href="contacts.html" class="btn">Book Your Experience</a>
+			</div>
+		  </section>
+		  
+		  
+		<!-- /Background Self hosted video bg fullscreen -->
+
+		<div class="container container-custom margin_80_0" id="first_section">
+			<div class="main_title_2">
+				<span><em></em></span>
+				<h2>Popular Packages</h2>
+				<p>Choose from our top-rated Andaman tour packages, crafted for every traveler.</p>
+			</div>
+			<div id="reccomended" class="owl-carousel owl-theme" data-cue="zoomIn">
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail1.html"><img src="img/havelock 2.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#AndamanHoliday</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail1.html">Andaman Delight - 5 Days</a></h3>
+							<p>Explore the beauty of Andaman with a 5-day trip covering top destinations like Cellular Jail, Radhanagar Beach, and Neil Island. Enjoy seamless transfers, private cruises, and thrilling activities. A perfect mix of relaxation and adventure awaits you!</p>
+							<!-- <span class="price">From <strong>$54</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 1h 30min</li>
+							<li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>8.9</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail2.html"><img src="https://res.cloudinary.com/roundglass/image/upload/f_auto,c_crop,x_0,y_220,w_2560,h_1440/ar_16:9,c_fill,w_auto/g_auto,q_auto/v1682682532/rg/collective/media/andaman-islands-adhith-swaminathan_e667tb.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#ExploreAndaman</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail2.html">Andaman Bliss - 6 Days</a></h3>
+							<p>Explore the best of Andaman in 6 days, from Port Blair's historical Cellular Jail to the serene Radhanagar Beach in Havelock and stunning Neil Island. Enjoy private transfers, scenic cruises, and beautiful sunsets. Perfect for a memorable vacation!</p>
+							<!-- <span class="price">From <strong>$124</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 1h 30min</li>
+							<li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail3.html"><img src="https://www.greavesindia.co.uk/wp-content/uploads/2018/05/Screenshot-2023-05-05-at-15.49.30.png" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#AndamanCoupleTrip</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail3.html">Andaman Paradise - 7 Days</a></h3>
+							<p>Enjoy a week-long Andaman adventure with visits to top beaches, private cruises, and breathtaking sunsets. Discover Havelock, Neil, and Port Blair, along with activities like Elephant Coral Beach and Chidiyatapu Sunset. A well-rounded experience of nature and tranquility!</p>
+							<!-- <span class="price">From <strong>$25</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 1h 30min</li>
+							<li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail4.html"><img src="https://lp-cms-production.imgix.net/2019-06/2977fdc408231b88a1ac983673230e37-andaman-islands.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#AndamanRomanticGetaway</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail4.html">Andaman Romantic Escape - 5 Days</a></h3>
+							<p>Indulge in a romantic 5-day Andaman getaway, including visits to Cellular Jail, Radhanagar Beach, Elephant Coral Beach, and the mesmerizing Chidiyatapu Sunset. Experience luxurious private transfers and scenic cruises, ensuring a perfect trip for two!</p>
+							<!-- <span class="price">From <strong>$45</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 2h 30min</li>
+							<li><div class="score"><span>Superb<em>350 Reviews</em></span><strong>9.0</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail5.html"><img src="https://seashellhotels.net/wp-content/uploads/2021/03/havelock-island-andaman.jpg" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#AndamanAdventure</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail5.html">Andaman Beach Adventure - 4 Days</a></h3>
+							<p>Enjoy a blissful 5-day holiday with your partner in the Andaman Islands. Visit the iconic Cellular Jail, unwind at Radhanagar Beach, and explore the beautiful Elephant Coral Beach and Chidiyatapu Sunset, all with private transfers and scenic cruises.</p>
+							<!-- <span class="price">From <strong>$65</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 1h 30min</li>
+							<li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.5</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+				<div class="item">
+					<div class="box_grid" data-cue="slideInUp">
+						<figure>
+							<a href="#0" class="wish_bt"></a>
+							<a href="tour-detail6.html"><img src="https://cdn.audleytravel.com/1050/751/79/1335171-andaman-islands.webp" class="img-fluid" alt="" width="800" height="533"><div class="read_more"><span>Read more</span></div></a>
+							<small>#AndamanIslandAdventure</small>
+						</figure>
+						<div class="wrapper">
+							<h3><a href="tour-detail6.html">Andaman Luxury Retreat - 5 Days</a></h3>
+							<p>Discover the beauty of Andaman in 5 days, from stunning beaches like Corbyn’s Cove and Radhanagar to thrilling activities like speed boating to Elephant Coral Beach. With private transfers and all-inclusive cruises, this trip is perfect for adventure and relaxation.</p>
+							<!-- <span class="price">From <strong>$95</strong> /per person</span> -->
+						</div>
+						<!-- <ul>
+							<li><i class="icon_clock_alt"></i> 1h 30min</li>
+							<li><div class="score"><span>Good<em>350 Reviews</em></span><strong>7.8</strong></div></li>
+						</ul> -->
+					</div>
+				</div>
+				<!-- /item -->
+			</div>
+			<!-- /carousel -->
+			<p class="btn_home_align"><a href="tours-grid-isotopepack.html" class="btn_1 rounded">View all Tours</a></p>
+			<hr class="large">
+		</div>
+		<!-- /container -->
+		
+		<div class="container container-custom margin_30_95">
+			<section class="add_bottom_45">
+				<div class="main_title_3">
+					<span><em></em></span>
+					<h2>Popular Destinations</h2>
+					<p>"Explore Breathtaking Destinations – Where Every Journey Becomes a Story!"</p>
+				</div>
+				<div class="row" data-cues="slideInUp">
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="tours-grid-isotopedest.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>8.9</strong></div> -->
+								<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/a4/e8/03/corbyn-s-cove-beach-waer.jpg?w=900&h=-1&s=1" style="height:220px" class="img-fluid" alt="">
+								<div class="info">
+									<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
+									<h3>Corbyn Cove Beach</h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="tours-grid-isotopedest.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>7.9</strong></div> -->
+								<img src="https://www.andamanocean.in/wp-content/uploads/2023/04/jolly-buoy-red-skin-image5.jpg" style="height:220px" class="img-fluid" alt="">
+								<div class="info">
+									<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
+									<h3>Jolly Buoy</h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="tours-grid-isotopedest.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>7.0</strong></div> -->
+								<img src="https://cdn.prod.website-files.com/5b56319971ac8c7475a9d877/5ede0e2ed96cb05404b232ef_chidiyatapu%20sunset-.JPG" style="height:220px" class="img-fluid" alt="">
+								<div class="info">
+									<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
+									<h3>Chidyatapu Beach</h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="tours-grid-isotopedest.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>8.9</strong></div> -->
+								<img src="https://www.havelockislandbeachresort.com/storage/havelock-island-1.png" style="height:220px" class="img-fluid" alt="">
+								<div class="info">
+									<div class="cat_star"><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i></div>
+									<h3>Elephanta Beach</h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+				</div>
+				<!-- /row -->
+				<!-- <a href="hotels-grid-isotope.html"><strong>View all (157) <i class="arrow_carrot-right"></i></strong></a> -->
+			</section>
+			<!-- /section -->
+			
+			<section class="add_bottom_45">
+				<div class="main_title_3">
+					<span><em></em></span>
+					<h2>Our Happy Customers 😊✨</h2>
+					<p>Our travelers' smiles say it all! From seamless trips to unforgettable island adventures, we create memories that last a lifetime. Hear from our happy customers and let’s plan your dream getaway! 🌴🌊💙</p>
+				</div>
+				<div class="row" data-cues="slideInUp">
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="media-gallery.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>8.5</strong></div> -->
+								<img src="img/h1.jpg" style="height:200px"class="img-fluid" alt="">
+								<div class="info">
+									<h3></h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="media-gallery.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>7.9</strong></div> -->
+								<img src="img/h2.jpg"  style="height:200px" class="img-fluid" alt="">
+								<div class="info">
+									<h3></h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="media-gallery.html" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>7.5</strong></div> -->
+								<img src="img/c11.jpg"  style="height:200px" class="img-fluid" alt="">
+								<div class="info">
+									<h3></h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<a href="media-gallery.html"  style="height:200px" class="grid_item">
+							<figure>
+								<!-- <div class="score"><strong>9.0</strong></div> -->
+								<img src="img/h3.jpg" class="img-fluid" alt="">
+								<div class="info">
+									<h3></h3>
+								</div>
+							</figure>
+						</a>
+					</div>
+					<!-- /grid_item -->
+				</div>
+				<!-- /row -->
+				<a href="media-gallery.html"><strong>View More<i class="arrow_carrot-right"></i></strong></a>
+			</section>
+			<!-- /section -->
+
+			<div class="banner mb-0" data-cue="zoomIn">
+				<div class="wrapper d-flex align-items-center opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.3)">
+					<div>
+						<small>Adventure</small>
+						<h3>Your Perfect<br>Advenure Experience</h3>
+						<p>Activities and accommodations</p>
+						<a href="adventure.html" class="btn_1">Read more</a>
+					</div>
+				</div>
+				<!-- /wrapper -->
+			</div>
+			<!-- /banner -->
+
+		</div>
+		<!-- /container -->
+
+		<div class="bg_color_1">
+			<div class="container margin_80_55">
+				<div class="main_title_2">
+					<span><em></em></span>
+					<h3>Blogs</h3>
+					<p>"Travel Smart, Explore More – Your Guide to Andaman Adventures!"</p>
+				</div>
+				<div class="row" data-cues="slideInUp">
+					<div class="col-lg-6">
+						<a class="box_news" href="blog.html">
+							<figure><img src="https://s7ap1.scene7.com/is/image/incredibleindia/chidiya-tapu-port-blair-andaman-nicobar-island-1-attr-hero?qlt=82&ts=1726746179374" alt="">
+								<!-- <figcaption><strong>28</strong>Dec</figcaption> -->
+							</figure>
+							<ul>
+								<!-- <li>Mark Twain</li> -->
+								<li>20.01.2025</li>
+							</ul>
+							<h4>"Best Time to Visit Andaman: Month-by-Month Guide (2024)"</h4>
+							<p>Wondering when to visit Andaman? We break it down month by month, helping you choose the perfect season for a beach vacation, adventure sports, and sightseeing.</p>
+						</a>
+					</div>
+					<!-- /box_news -->
+					<div class="col-lg-6">
+						<a class="box_news" href="blog.html">
+							<figure><img src="https://whitesandandaman.com/assets/img/activities/Activity_1638206078.jpg" alt="">
+								<!-- <figcaption><strong>28</strong>Dec</figcaption> -->
+							</figure>
+							<ul>
+								<!-- <li>Jhon Doe</li> -->
+								<li>20.01.2025</li>
+							</ul>
+							<h4>"Top 10 Things to Do in Andaman Beyond Beaches"</h4>
+							<p>Think Andaman is all about beaches? Think again! From trekking to bioluminescent beaches and glass-bottom boat rides, discover experiences that will make your trip unforgettable.</p>
+						</a>
+					</div>
+					<!-- /box_news -->
+					<div class="col-lg-6">
+						<a class="box_news" href="blog.html">
+							<figure><img src="https://www.mannhitvacations.com/uploads/content/Andmann2.jpg" alt="">
+								<!-- <figcaption><strong>28</strong>Dec</figcaption> -->
+							</figure>
+							<ul>
+								<!-- <li>Luca Robinson</li> -->
+								<li>20.01.2025</li>
+							</ul>
+							<h4>"Andaman Honeymoon Guide: Romantic Places & Must-Do Activities"</h4>
+							<p>Planning your honeymoon in Andaman? Here’s a guide to the most romantic beaches, sunset cruises, and candlelight dinners to make your honeymoon truly magical.</p>
+						</a>
+					</div>
+					<!-- /box_news -->
+					<div class="col-lg-6">
+						<a class="box_news" href="blog.html">
+							<figure><img src="https://cdn.trytrabbycdn.com/blog_posts/9c641565ee992c8b5411750433cf1982/conversions/transportation-in-andaman-nicobar-islands_29690-responsive.webp?v=1713546579" alt="">
+								<!-- <figcaption><strong>28</strong>Dec</figcaption> -->
+							</figure>
+							<ul>
+								<!-- <li>Paula Rodrigez</li> -->
+								<li>20.01.2025</li>
+							</ul>
+							<h4>"How to Reach Andaman: Flight, Cruise & Ferry Options Explained"</h4>
+							<p>Confused about how to reach Andaman? This blog covers flight routes, cruise options, and inter-island ferry services to help you plan your journey hassle-free.</p>
+						</a>
+					</div>
+					<!-- /box_news -->
+				</div>
+				<!-- /row -->
+				<p class="btn_home_align"><a href="blog.html" class="btn_1 rounded">View More</a></p>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_color_1 -->
+
+		<div class="call_section">
+			<div class="customer-review-section">
+				<h2>What Our Customers Say</h2>
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<!-- Review 1 -->
+						<div class="swiper-slide review-card">
+							<div class="review-container">
+								<div class="customer-image">
+									<img src="https://lh3.googleusercontent.com/a-/ALV-UjXpi9bmqBIle90jAG-XDjbuBomHq4PxsWMYO9oh-fxoGIRQBrda=w83-h83-p-rp-mo-br100" alt="Customer 1">
+								</div>
+								<div class="review-content">
+									<img class="google-review" src="img/review/Screenshot_24-3-2025_95218_www.google.com.jpeg" alt="Guest Review 1">
+								</div>
+							</div>
+						</div>
+						<!-- Review 2 -->
+						<div class="swiper-slide review-card">
+							<div class="review-container">
+								<div class="customer-image">
+									<img src="https://lh3.googleusercontent.com/a-/ALV-UjXm5l89NeLkUsrqHtaa2NofYKEMJ5IkVMJVbltDyG9a6d4ctkhjRg=w83-h83-p-rp-mo-br100" alt="Customer 2">
+								</div>
+								<div class="review-content">
+									<img class="google-review" src="img/review/Screenshot_24-3-2025_103334_www.google.com.jpeg" alt="Guest Review 2">
+								</div>
+							</div>
+						</div>
+						<!-- Review 3 -->
+						<div class="swiper-slide review-card">
+							<div class="review-container">
+								<div class="customer-image">
+									<img src="https://lh3.googleusercontent.com/a-/ALV-UjXgD22b-JvxAfQ3YGMVWk01X8xxye8DVWPjvmXESKUZNp9KQhw=w83-h83-p-rp-mo-br100" alt="Customer 3">
+								</div>
+								<div class="review-content">
+									<img class="google-review" src="img/review/Screenshot_24-3-2025_103548_www.google.com.jpeg" alt="Guest Review 3">
+								</div>
+							</div>
+						</div>
+                        <!-- Review 4 -->
+						<div class="swiper-slide review-card">
+							<div class="review-container">
+								<div class="customer-image">
+									<img src="https://lh3.googleusercontent.com/a-/ALV-UjVeGtYefGyiAWrE6fSX0WreWRG4I_-qVapLD09Zj2UUrVAvM3zI=w83-h83-p-rp-mo-br100" alt="Customer 3">
+								</div>
+								<div class="review-content">
+									<img class="google-review" src="img/review/Screenshot_24-3-2025_103749_www.google.com.jpeg" alt="Guest Review 3">
+								</div>
+							</div>
+						</div>
+						<!-- Review 5 -->
+						<div class="swiper-slide review-card">
+							<div class="review-container">
+								<div class="customer-image">
+									<img src="https://lh3.googleusercontent.com/a-/ALV-UjUA16J-_R6M_5h2OCtvCNhZXcewOhfEVSdOTYBBTil7gzCYpgP5Ug=w83-h83-p-rp-mo-br100" alt="Customer 3">
+								</div>
+								<div class="review-content">
+									<img class="google-review" src="img/review/Screenshot_24-3-2025_104159_www.google.com.jpeg" alt="Guest Review 3">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Navigation Buttons -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<!-- Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			
+		</div>
+		<!--/call_section-->
+	</main>
+	<!-- /main -->
+
+	<footer>
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 pe-5">
+					<p><img src="img/logo/5(1).png" width="150" height="36" alt=""></p>
+					<p>“Heaven Andaman is your trusted travel partner, offering tailor-made vacation packages to the enchanting Andaman Islands. With a focus on personalized experiences, we bring you the best of this tropical paradise, from serene beaches to thrilling adventures. Whether you’re planning a family getaway, a romantic honeymoon, or an unforgettable adventure, Heaven Andaman ensures your journey is seamless and unforgettable. Let us guide you through the beauty of Andaman, where every moment is a memory in the making.”</p>
+					<div class="follow_us">
+						<ul>
+							<li>Follow us</li>
+							<li><a href="https://www.facebook.com/profile.php?id=61567629187993"><i class="bi bi-facebook"></i></a></li>
+							<li><a href="https://g.co/kgs/5bavMLn" target="_blank"><i class="fab fa-google"></i></a></li>
+							<li><a href="https://www.instagram.com/heavenandaman?utm_source=qr&igsh=dTh1Y2Z1OHoyOGFo"><i class="bi bi-instagram"></i></a></li>
+							<!-- <li><a href="#0"><i class="bi bi-tiktok"></i></a></li> -->
+							<li><a href="https://wa.me/7063992678"><i class="bi bi-whatsapp"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ms-lg-auto">
+					<h5>Useful links</h5>
+					<ul class="links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="tours-grid-isotope.html">Package</a></li>
+						<li><a href="adventure.html">Activities</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="blog.html">Destination</a></li>
+						<li><a href="contacts.html">Contacts</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Contact with Us</h5>
+					<ul class="contacts">
+						<li><a href="tel://7001418035"><i class="ti-mobile"></i>7001418035 / 7063992678	</a></li>
+						<li><a href="mailto:heavenandaman@gmail.com "><i class="ti-email"></i>heavenandaman@gmail.com</a></li>
+					</ul>
+					<!-- <div id="newsletter">
+					<h6>Newsletter</h6>
+					<div id="message-newsletter"></div>
+					<form method="post" action="htmlmailer/newsletter_template_email.html" name="newsletter_form" id="newsletter_form">
+						<div class="form-group">
+							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+							<input type="submit" value="Submit" id="submit-newsletter">
+						</div>
+					</form>
+					</div> -->
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<!-- <div class="col-lg-6">
+					<ul id="footer-selector">
+						<li>
+							<div class="styled-select" id="lang-selector">
+								<select>
+									<option value="English" selected>English</option>
+									<option value="French">French</option>
+									<option value="Spanish">Spanish</option>
+									<option value="Russian">Russian</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="styled-select" id="currency-selector">
+								<select>
+									<option value="US Dollars" selected>US Dollars</option>
+									<option value="Euro">Euro</option>
+								</select>
+							</div>
+						</li>
+						<li><img src="img/cards_all.svg" alt=""></li>
+					</ul>
+				</div> -->
+				<div class="col-lg-6">
+					<p>
+						Copyright 2025 Heaven Andaman &amp; WebNova<br>
+					   Follow :  <a href="https://www.facebook.com/mageshvaran.janu"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/mr.glamzer/"><i class="bi bi-instagram"></i></a> <a href="https://wa.me/7063913528"><i class="bi bi-whatsapp"></i></a>
+					 </p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	
+	<!-- Sign In Popup -->
+	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+		<div class="small-dialog-header">
+			<h3>Sign In</h3>
+		</div>
+		<form>
+			<div class="sign-in-wrapper">
+				<a href="#0" class="social_bt facebook">Login with Facebook</a>
+				<a href="#0" class="social_bt google">Login with Google</a>
+				<div class="divider"><span>Or</span></div>
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" class="form-control" name="email" id="email">
+					<i class="icon_mail_alt"></i>
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control" name="password" id="password" value="">
+					<i class="icon_lock_alt"></i>
+				</div>
+				<div class="clearfix add_bottom_15">
+					<div class="checkboxes float-start">
+						<label class="container_check">Remember me
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="float-end mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+				</div>
+				<div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
+				<div class="text-center">
+					Don’t have an account? <a href="register.html">Sign up</a>
+				</div>
+				<div id="forgot_pw">
+					<div class="form-group">
+						<label>Please confirm login email below</label>
+						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
+						<i class="icon_mail_alt"></i>
+					</div>
+					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+				</div>
+			</div>
+		</form>
+		<!--form -->
+	</div>
+	<!-- /Sign In Popup -->
+	
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.js"></script>
+    <script src="js/main.js"></script>
+	<script src="htmlmailer/validate.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: false, // Disable autoplay
+    });
+});
+</script>
+	
+	<!-- DATEPICKER  -->
+	<script>
+	$(function() {
+	  'use strict';
+	  $('input[name="dates"]').daterangepicker({
+		  autoUpdateInput: false,
+		  minDate:new Date(),
+		  locale: {
+			  cancelLabel: 'Clear'
+		  }
+	  });
+	  $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+		  $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
+	  });
+	  $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+		  $(this).val('');
+	  });
+	});
+	</script>
+	
+	<!-- INPUT QUANTITY  -->
+	<script src="js/input_qty.js"></script>
+	
+</body>
+</html>

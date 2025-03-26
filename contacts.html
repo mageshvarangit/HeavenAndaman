@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Panagea - Premium site template for travel agencies, hotels and restaurant listing.">
+    <meta name="author" content="Ansonika">
+    <title>Heaven Andaman</title>
+
+    <!-- Favicons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+<style>
+	/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.faq-section {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #007bff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.faq-item {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    color: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #0056b3;
+}
+
+.faq-question .material-icons {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-question .material-icons {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .faq-question {
+        font-size: 18px;
+    }
+}
+
+
+</style>
+
+<body class="datepicker_mobile_full"><!-- Remove this class to disable datepicker full on mobile -->
+		
+	<div id="page">
+		
+		<header class="header menu_fixed">
+			<!-- <div id="preloader"><div data-loader="circle-side"></div></div>/Page Preload -->
+			<div id="logo">
+				<a href="index.html">
+					<img src="img/logo/5(1).png" width="170" height="56" alt="" class="logo_normal">
+					<img src="img/logo/5.png" width="170" height="56" alt="" class="logo_sticky">
+				</a>
+			</div>
+			 <!-- <ul id="top_menu">
+				<li><a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
+				<li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+				<li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
+			</ul>  -->
+			<!-- /top_menu -->
+			<a href="#menu" class="btn_mobile">
+				<div class="hamburger hamburger--spin" id="hamburger">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</a>
+			<nav id="menu" class="main-menu">
+				<ul>
+				<li><span><a href="index-15.html">Home</a></span></li>
+				<li><span><a href="about.html">About</a></span></li>
+				<li><span><a href="tours-grid-isotopepack.html">Package</a></span></li>
+				<li><span><a href="tours-grid-isotopedest.html">Destination</a></span></li>
+				
+					<!-- <li><span><a href="#0">Hotels</a></span>
+						<ul>
+							<li>
+								<span><a href="#0">Hotel Grid</a></span>
+								<ul>
+									<li><a href="hotels-grid-isotope.html">Hotel Grid Isotope</a></li>
+									<li><a href="hotels-grid-sidebar.html">Hotel Grid Sidebar</a></li>
+									<li><a href="hotels-grid-sidebar-2.html">Hotel Grid Sidebar 2</a></li>
+									<li><a href="hotels-grid.html">Hotel Grid Simple</a></li>
+								</ul>
+							</li>
+							<li>
+								<span><a href="#0">Hotel List</a></span>
+								<ul>
+									<li><a href="hotels-list-isotope.html">Hotel List Isotope</a></li>
+									<li><a href="hotels-list-sidebar.html">Hotel List Sidebar</a></li>
+									<li><a href="hotels-list-sidebar-2.html">Hotel List Sidebar 2</a></li>
+									<li><a href="hotels-list.html">Hotel List Simple</a></li>
+								</ul>
+							</li>
+							<li><a href="hotels-half-screen-map.html">Hotel Half Screen Map</a></li>
+							<li><a href="hotel-detail.html">Hotel Detail</a></li>
+						</ul>
+					</li>
+					<li><span><a href="#0">Eat &amp; Drink</a></span>
+						<ul>
+							<li>
+								<span><a href="#0">Restaurant Grid</a></span>
+								<ul>
+									<li><a href="restaurants-grid-isotope.html">Restaurant Grid Isotope</a></li>
+									<li><a href="restaurants-grid-sidebar.html">Restaurant Grid Sidebar</a></li>
+									<li><a href="restaurants-grid-sidebar-2.html">Restaurant Grid Sidebar 2</a></li>
+									<li><a href="restaurants-grid.html">Restaurant Grid simple</a></li>
+								</ul>
+							</li>
+							<li>
+								<span><a href="#0">Restaurant List</a></span>
+								<ul>
+									<li><a href="restaurants-list-isotope.html">Restaurant List Isotope</a></li>
+									<li><a href="restaurants-list-sidebar.html">Restaurant List Sidebar</a></li>
+									<li><a href="restaurants-list-sidebar-2.html">Restaurant List Sidebar 2</a></li>
+									<li><a href="restaurants-list.html">Restaurant List Simple</a></li>
+								</ul>
+							</li>
+							<li><a href="restaurants-half-screen-map.html">Half Screen Map</a></li>
+							<li><a href="restaurant-detail.html">Restaurant Detail</a></li>
+							<li><a href="restaurant-detail-2.html">Restaurant Time Picker</a></li>
+						</ul>
+					</li> -->
+					<li><span><a href="adventure.html">Activities</a></span></li>
+					<li><span><a href="blog.html">Blog</a></span></li>
+					<li><span><a href="media-gallery.html">Our Happy Customer</a></span></li>
+					<li><span><a href="#0">Service</a></span>
+						<ul>
+							<li><a href="hotels-list-isotopeferry.html">Ferry Service</a></li>
+							<li><a href="hotels-list-isotopecab.html">Cab Service</a></li>
+							<!-- <li><a href="help.html">Help Section</a></li> -->
+							<!-- <li><a href="faq.html">Faq Section</a></li>
+							<li><a href="wishlist.html">Wishlist page</a></li>
+							<li><a href="contacts.html">Contacts</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="register.html">Register</a></li>
+							<li><a href="blog.html">Blog</a></li>
+							<li><a href="bootstrap-modal.html">Bootstrap Modal <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="modal-version-2.html">Another Modal <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="pricing-tables-2.html">Pricing Tables 1 <strong class="badge text-bg-danger">New!</strong></a></li>
+							<li><a href="pricing-tables-3.html">Pricing Tables 2 <strong class="badge text-bg-danger">New!</strong></a></li> -->
+						</ul>
+					</li>
+				<li><span><a href="contacts.html">Contact</a></span></li>
+					
+					<!-- <li><span><a href="#0">Extra</a></span>
+						<ul>
+							<li><a href="menu-options.html">Menu Position Options</a></li>
+							<li><a href="tour-detail-singlemonth-datepicker.html">Single month Datepicker</a></li>
+							<li><a href="404.html">404 Error page</a></li>
+							<li><a href="cart-1.html">Cart page 1</a></li>
+							<li><a href="cart-2.html">Cart page 2</a></li>
+							<li><a href="cart-3.html">Cart page 3</a></li>
+							<li><a href="pricing-tables.html">Responsive pricing tables</a></li>
+							<li><a href="coming_soon/index.html">Coming soon</a></li>
+							<li><a href="invoice.html">Invoice</a></li>
+							<li><a href="icon-pack-1.html">Icon pack 1</a></li>
+							<li><a href="icon-pack-2.html">Icon pack 2</a></li>
+							<li><a href="icon-pack-3.html">Icon pack 3</a></li>
+							<li><a href="icon-pack-4.html">Icon pack 4</a></li>
+							<li><a href="hamburgers.html">Animated Hamburgers</a></li>
+						</ul>
+					</li> -->
+					<!-- <li><span><a href="#0">Buy template</a></span></li> -->
+				</ul>
+			</nav>
+		</header>
+	<!-- /header -->
+	
+	<main>
+		<section class="hero_in contacts">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Contact Us</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div class="contact_info">
+			<div class="container">
+				<ul class="clearfix">
+					<li>
+						<i class="pe-7s-map-marker"></i>
+						<h4>Address</h4>
+						<span>Biggie Line, Near Hotel Ami Grace, Sri Vijaya Puram 744104<br></span>
+					</li>
+					<li>
+						<i class="pe-7s-mail-open-file"></i>
+						<h4>Email address</h4>
+						<span>heavenandaman@gmail.com <br><small>Monday to Saturday 9am - 6pm</small></span>
+
+					</li>
+					<li>
+						<i class="pe-7s-phone"></i>
+						<h4>Contacts info</h4>
+						<span>7001418035 / 7063992678<br><small>Monday to Saturday 9am - 6pm</small></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--/contact_info-->
+
+		<div class="bg_color_1">
+			<div class="container margin_80_55">
+				<div class="row justify-content-between">
+					<div class="col-lg-5">
+						<img src="https://media.istockphoto.com/id/461064709/photo/blue-contact-us-button-on-a-white-keyboard.jpg?s=612x612&w=0&k=20&c=xA5MTvKN6-Ey_WNKHHosKP2j-yn8xIvxkjLT7brCEiY=" alt="Your Image" class="img-fluid">
+					</div>
+					<div class="col-lg-6">
+						<h4>Send a message</h4>
+						<p>"Have Questions? Let's Talk!"</p>
+						<div id="message-contact"></div>
+						<form id="contactform" autocomplete="off">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Name</label>
+										<input class="form-control" type="text" id="name_contact" name="name_contact">
+										<small class="error" id="name_error"></small>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Last name</label>
+										<input class="form-control" type="text" id="lastname_contact" name="lastname_contact">
+										<small class="error" id="lastname_error"></small>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Email</label>
+										<input class="form-control" type="email" id="email_contact" name="email_contact">
+										<small class="error" id="email_error"></small>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Telephone</label>
+										<input class="form-control" type="text" id="phone_contact" name="phone_contact">
+										<small class="error" id="phone_error"></small>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Date of Travel</label>
+										<input class="form-control" type="date" id="date_of_travel" name="date_of_travel">
+										<small class="error" id="date_of_travel_error"></small>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>No. of Adults <small>(if child, mention age)</small></label>
+										<input class="form-control" type="text" id="adults_contact" name="adults_contact">
+										<small class="error" id="adults_error"></small>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>No. of Nights to Stay</label>
+										<input class="form-control" type="text" id="nights_contact" name="nights_contact">
+										<small class="error" id="nights_error"></small>
+									</div>
+								</div>
+							</div>
+							<!-- /row -->
+							<div class="form-group">
+								<label>Message</label>
+								<textarea class="form-control" id="message_contact" name="message_contact" style="height:150px;"></textarea>
+								<small class="error" id="message_error"></small>
+							</div>
+						
+							<!-- Buttons -->
+							<div class="row">
+								<div class="col-md-6">
+									<button type="button" class="btn btn-success" id="sendWhatsApp">Send via WhatsApp</button>
+								</div>
+								<div class="col-md-6">
+									<button type="button" class="btn btn-primary" id="sendMailto">Send via Email</button>
+								</div>
+							</div>
+						</form>
+						
+						<style>
+							.error {
+								color: red;
+								font-size: 0.85rem;
+							}
+						</style>
+						
+						
+						
+					</div>
+					<section class="faq-section">
+						<h2>Frequently Asked Questions</h2>
+				
+						<div class="faq-item">
+							<div class="faq-question" onclick="toggleAnswer(1)">
+								<span class="material-icons">+</span>
+								<h3>What services do you offer at Heaven Andaman?</h3>
+							</div>
+							<div class="faq-answer" id="answer1">
+								<p>We offer customized travel packages, including sightseeing tours, adventure activities, beach resorts, and family-friendly vacation packages. We also manage guest bookings and ensure smooth travel arrangements in the Andaman Islands.</p>
+							</div>
+						</div>
+				
+						<div class="faq-item">
+							<div class="faq-question" onclick="toggleAnswer(2)">
+								<span class="material-icons">+</span>
+								<h3>How can I book a package with Heaven Andaman?</h3>
+							</div>
+							<div class="faq-answer" id="answer2">
+								<p>Booking a package is easy! You can visit our website and choose your preferred package, or simply contact us via our help direct line or chat support for personalized assistance.</p>
+							</div>
+						</div>
+				
+						<div class="faq-item">
+							<div class="faq-question" onclick="toggleAnswer(3)">
+								<span class="material-icons">+</span>
+								<h3>Are your packages customizable?</h3>
+							</div>
+							<div class="faq-answer" id="answer3">
+								<p>Yes, all of our packages are fully customizable. We can tailor your trip to meet your interests, whether it's adventure, relaxation, or family-friendly experiences in the Andaman Islands.</p>
+							</div>
+						</div>
+				
+						<!-- Add more FAQs as needed -->
+					</section>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_color_1 -->
+	</main>
+	<!--/main-->
+	
+	<footer>
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 pe-5">
+					<p><img src="img/logo/5(1).png" width="150" height="36" alt=""></p>
+					<p>“Heaven Andaman is your trusted travel partner, offering tailor-made vacation packages to the enchanting Andaman Islands. With a focus on personalized experiences, we bring you the best of this tropical paradise, from serene beaches to thrilling adventures. Whether you’re planning a family getaway, a romantic honeymoon, or an unforgettable adventure, Heaven Andaman ensures your journey is seamless and unforgettable. Let us guide you through the beauty of Andaman, where every moment is a memory in the making.”</p>
+					<div class="follow_us">
+						<ul>
+							<li>Follow us</li>
+							<li><a href="https://www.facebook.com/profile.php?id=61567629187993"><i class="bi bi-facebook"></i></a></li>
+							<li><a href="https://g.co/kgs/5bavMLn" target="_blank"><i class="fab fa-google"></i></a></li>
+							<li><a href="https://www.instagram.com/heavenandaman?utm_source=qr&igsh=dTh1Y2Z1OHoyOGFo"><i class="bi bi-instagram"></i></a></li>
+							<!-- <li><a href="#0"><i class="bi bi-tiktok"></i></a></li> -->
+							<li><a href="https://wa.me/7063992678"><i class="bi bi-whatsapp"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ms-lg-auto">
+					<h5>Useful links</h5>
+					<ul class="links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="tours-grid-isotope.html">Package</a></li>
+						<li><a href="adventure.html">Activities</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="blog.html">Destination</a></li>
+						<li><a href="contacts.html">Contacts</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Contact with Us</h5>
+					<ul class="contacts">
+						<li><a href="tel://7001418035"><i class="ti-mobile"></i>7001418035 / 7063992678	</a></li>
+						<li><a href="mailto:heavenandaman@gmail.com "><i class="ti-email"></i>heavenandaman@gmail.com</a></li>
+					</ul>
+					<!-- <div id="newsletter">
+					<h6>Newsletter</h6>
+					<div id="message-newsletter"></div>
+					<form method="post" action="htmlmailer/newsletter_template_email.html" name="newsletter_form" id="newsletter_form">
+						<div class="form-group">
+							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+							<input type="submit" value="Submit" id="submit-newsletter">
+						</div>
+					</form>
+					</div> -->
+				</div>
+			</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<!-- <div class="col-lg-6">
+					<ul id="footer-selector">
+						<li>
+							<div class="styled-select" id="lang-selector">
+								<select>
+									<option value="English" selected>English</option>
+									<option value="French">French</option>
+									<option value="Spanish">Spanish</option>
+									<option value="Russian">Russian</option>
+								</select>
+							</div>
+						</li>
+						<li>
+							<div class="styled-select" id="currency-selector">
+								<select>
+									<option value="US Dollars" selected>US Dollars</option>
+									<option value="Euro">Euro</option>
+								</select>
+							</div>
+						</li>
+						<li><img src="img/cards_all.svg" alt=""></li>
+					</ul>
+				</div> -->
+				<div class="col-lg-6">
+					<p>
+						Copyright 2025 Heaven Andaman &amp; WebNova<br>
+					   Follow :  <a href="https://www.facebook.com/mageshvaran.janu"><i class="bi bi-facebook"></i></a> <a href="https://www.instagram.com/mr.glamzer/"><i class="bi bi-instagram"></i></a> <a href="https://wa.me/7063913528"><i class="bi bi-whatsapp"></i></a>
+					 </p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--/footer-->
+	</div>
+	<!-- page -->
+	
+	<!-- Sign In Popup -->
+	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+		<div class="small-dialog-header">
+			<h3>Sign In</h3>
+		</div>
+		<form>
+			<div class="sign-in-wrapper">
+				<a href="#0" class="social_bt facebook">Login with Facebook</a>
+				<a href="#0" class="social_bt google">Login with Google</a>
+				<div class="divider"><span>Or</span></div>
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" class="form-control" name="email" id="email">
+					<i class="icon_mail_alt"></i>
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control" name="password" id="password" value="">
+					<i class="icon_lock_alt"></i>
+				</div>
+				<div class="clearfix add_bottom_15">
+					<div class="checkboxes float-start">
+						<label class="container_check">Remember me
+						  <input type="checkbox">
+						  <span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="float-end mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
+				</div>
+				<div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
+				<div class="text-center">
+					Don’t have an account? <a href="register.html">Sign up</a>
+				</div>
+				<div id="forgot_pw">
+					<div class="form-group">
+						<label>Please confirm login email below</label>
+						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
+						<i class="icon_mail_alt"></i>
+					</div>
+					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+				</div>
+			</div>
+		</form>
+		<!--form -->
+		<!-- js for contact -->
+		<script>
+			document.getElementById("sendWhatsApp").addEventListener("click", function () {
+    if (!validateForm()) return; // Prevent sending if validation fails
+
+    let name = document.getElementById("name_contact").value;
+    let lastName = document.getElementById("lastname_contact").value;
+    let email = document.getElementById("email_contact").value;
+    let phone = document.getElementById("phone_contact").value;
+    let message = document.getElementById("message_contact").value;
+    let dateOfTravel = document.getElementById("date_of_travel").value;
+    let adults = document.getElementById("adults_contact").value;
+    let nights = document.getElementById("nights_contact").value;
+
+    let whatsappNumber = "7063992678"; // Replace with actual number
+
+    let whatsappMessage = `Hello, my name is ${name} ${lastName}.\n\nEmail: ${email}\nPhone: ${phone}\nDate of Travel: ${dateOfTravel}\nNo. of Adults: ${adults}\nNo. of Nights: ${nights}\n\nMessage: ${message}`;
+    
+    let encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+});
+
+document.getElementById("sendMailto").addEventListener("click", function () {
+    if (!validateForm()) return; // Prevent sending if validation fails
+
+    let name = document.getElementById("name_contact").value;
+    let lastName = document.getElementById("lastname_contact").value;
+    let email = document.getElementById("email_contact").value;
+    let phone = document.getElementById("phone_contact").value;
+    let message = document.getElementById("message_contact").value;
+    let dateOfTravel = document.getElementById("date_of_travel").value;
+    let adults = document.getElementById("adults_contact").value;
+    let nights = document.getElementById("nights_contact").value;
+
+    let recipientEmail = "heavenandaman@gmail.com"; // Replace with your email
+
+    let mailtoLink = `mailto:${recipientEmail}?subject=New Contact Form Submission&body=Name: ${name} ${lastName}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0ADate of Travel: ${dateOfTravel}%0D%0ANo. of Adults: ${adults}%0D%0ANo. of Nights: ${nights}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+
+    window.location.href = mailtoLink;
+});
+
+// Validation Function
+function validateForm() {
+    let isValid = true;
+
+    let name = document.getElementById("name_contact").value.trim();
+    let lastName = document.getElementById("lastname_contact").value.trim();
+    let email = document.getElementById("email_contact").value.trim();
+    let phone = document.getElementById("phone_contact").value.trim();
+    let message = document.getElementById("message_contact").value.trim();
+    let dateOfTravel = document.getElementById("date_of_travel").value.trim();
+    let adults = document.getElementById("adults_contact").value.trim();
+    let nights = document.getElementById("nights_contact").value.trim();
+
+    // Clear previous errors
+    document.getElementById("name_error").textContent = "";
+    document.getElementById("lastname_error").textContent = "";
+    document.getElementById("email_error").textContent = "";
+    document.getElementById("phone_error").textContent = "";
+    document.getElementById("message_error").textContent = "";
+    document.getElementById("date_of_travel_error").textContent = "";
+    document.getElementById("adults_error").textContent = "";
+    document.getElementById("nights_error").textContent = "";
+
+    // Name validation
+    if (name === "") {
+        document.getElementById("name_error").textContent = "Name is required.";
+        isValid = false;
+    }
+
+    // Last name validation
+    if (lastName === "") {
+        document.getElementById("lastname_error").textContent = "Last name is required.";
+        isValid = false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+        document.getElementById("email_error").textContent = "Email is required.";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        document.getElementById("email_error").textContent = "Enter a valid email address.";
+        isValid = false;
+    }
+
+    // Phone validation (Only digits)
+    let phonePattern = /^[0-9]+$/;
+    if (phone === "") {
+        document.getElementById("phone_error").textContent = "Phone number is required.";
+        isValid = false;
+    } else if (!phonePattern.test(phone)) {
+        document.getElementById("phone_error").textContent = "Enter a valid phone number (digits only).";
+        isValid = false;
+    } else if (phone.length < 10) {
+        document.getElementById("phone_error").textContent = "Phone number must be at least 10 digits.";
+        isValid = false;
+    }
+
+    // Message validation
+    if (message === "") {
+        document.getElementById("message_error").textContent = "Message cannot be empty.";
+        isValid = false;
+    }
+
+    // Date of Travel validation
+    if (dateOfTravel === "") {
+        document.getElementById("date_of_travel_error").textContent = "Date of Travel is required.";
+        isValid = false;
+    }
+
+    // Adults validation
+    if (adults === "") {
+        document.getElementById("adults_error").textContent = "Number of adults is required.";
+        isValid = false;
+    }
+
+    // Nights validation
+    if (nights === "") {
+        document.getElementById("nights_error").textContent = "Number of nights is required.";
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+			</script>
+
+			<script>
+				function toggleAnswer(id) {
+    var item = document.getElementById('answer' + id).parentElement;
+    var answer = document.getElementById('answer' + id);
+    var icon = item.querySelector('.material-icons');
+
+    if (item.classList.contains('open')) {
+        item.classList.remove('open');
+        icon.innerText = '+';
+    } else {
+        item.classList.add('open');
+        icon.innerText = '-';
+    }
+}
+
+
+			</script>
+			
+			
+			
+	</div>
+	<!-- /Sign In Popup -->
+	
+	<div id="toTop"></div><!-- Back to top button -->
+	
+	<!-- COMMON SCRIPTS -->
+    <script src="js/common_scripts.js"></script>
+    <script src="js/main.js"></script>
+	<script src="htmlmailer/validate.js"></script>
+	
+	<!-- SPECIFIC SCRIPTS -->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="js/mapmarker.jquery.js"></script>
+	<script src="js/mapmarker_func.jquery.js"></script>
+	
+</body>
+</html>
